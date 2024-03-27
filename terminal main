@@ -1,0 +1,26 @@
+# Simple Terminal Program
+
+# Dictionary to store commands and their corresponding functions
+commands = {
+    "hello": lambda: "Hello! How can I help you?",
+    "time": lambda: "The current time is 12:00 PM.",
+    "date": lambda: "Today's date is January 1, 2024.",
+    "exit": lambda: exit()  # Exit the program
+}
+
+def main():
+    print("Welcome to Simple Terminal!")
+    print("Available commands: hello, time, date, exit")
+
+    while True:
+        user_input = input("Enter command: ").lower()  # Get user input and convert to lowercase
+
+        # Check if the command is in the dictionary
+        if user_input in commands:
+            output = commands[user_input]()  # Call the corresponding function
+            print(output)
+        else:
+            print("Command not found. Please try again.")
+
+if __name__ == "__main__":
+    main()
